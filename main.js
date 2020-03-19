@@ -1,3 +1,14 @@
+Vue.component('product-list', {
+    props: ['products'],
+    template: `
+        <ul>
+            <li v-for="product in products">{{product.name}}</li>
+        </ul>
+    `
+})
+
+
+
 app = new Vue({
     el: '#root',
     data: {

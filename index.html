@@ -20,6 +20,11 @@
             <input v-model="newProduct" v-on:keyup.enter="addProduct"></input>
             <button v-on:click="addProduct">Add Product</button>
         </div>
+
+        <div id="comp-list">
+            <p>Displaying Products using Vue Component:</p>
+            <product-list v-bind:products="products" />
+        </div>
        
     </div>
 
