@@ -1,0 +1,36 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Vue Practice</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+
+<body>
+
+    <div id="root">
+        <div id="list">
+            <p>Practice using list and v-for:</p>
+            <ul>
+                <li v-for="product in products">{{product.name | capitalize }}</li>
+            </ul> 
+            <input v-model="newProduct" v-on:keyup.enter="addProduct"></input>
+            <button v-on:click="addProduct">Add Product</button>
+        </div>
+       
+    </div>
+
+
+
+
+
+
+
+
+  <script src="main.js"></script>
+  
+</body>
+</html>
