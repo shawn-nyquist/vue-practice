@@ -1,8 +1,9 @@
 Vue.component('product-list', {
-    props: ['products'],
+    props: ['products'], //passes the array
     template: `
+        {{ reverseOrder }}
         <ul>
-            <li v-for="product in products">{{product.name}}</li>
+            <li v-for="product in products">{{ product.name }}</li>
         </ul>
     `
 })
@@ -24,12 +25,16 @@ app = new Vue({
         addProduct: function() {
             this.products.push({name: this.newProduct}) //Adds input value to array of products
             this.newProduct = '' //Clears input
-        }
+        },
+        reverseOrder: function() {
+            return this.products.reverse()
+        } 
     },
     filters: {
         //Capitalizes array items without changing the array
         capitalize: function(value) {
             return value.toUpperCase()
         }
+        
     }
 })
